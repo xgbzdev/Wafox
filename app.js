@@ -198,7 +198,7 @@
       }
       if (!m.fromMe && !viewing) {
         c.unread = (c.unread || 0) + 1;
-        Notify.show(c.name || m.from, (m.from && m.from !== c.name ? m.from + ': ' : '') + preview(m), 'icons/60.png',
+        Notify.show(c.name || m.from, (m.from && m.from !== c.name ? m.from + ': ' : '') + preview(m), '60.png',
           function () { openChat(m.chat); });
       }
       renderChats();
