@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>WaFox</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+<!-- Chat list -->
+<section id="v-chats" class="view active">
+  <header>
+    <h1>WaFox</h1>
+    <span id="conn" class="dot off" title="connection"></span>
+    <button id="btn-sticker-maker" class="hbtn">Stickers</button>
+    <button id="btn-settings" class="hbtn">⚙</button>
+  </header>
+  <ul id="chat-list" class="list"></ul>
+</section>
+
+<!-- Conversation -->
+<section id="v-conv" class="view">
+  <header>
+    <button id="btn-back" class="hbtn">‹</button>
+    <h1 id="conv-title"></h1>
+  </header>
+  <div id="messages"></div>
+  <div id="sticker-tray" class="hidden"></div>
+  <footer class="composer">
+    <button id="btn-attach" class="cbtn">📎</button>
+    <button id="btn-tray" class="cbtn">☺</button>
+    <input id="txt" type="text" placeholder="Message" autocomplete="off">
+    <button id="btn-send" class="cbtn send">➤</button>
+    <input id="file-attach" type="file" accept="image/*,video/*" multiple class="hidden">
+  </footer>
+</section>
+
+<!-- Sticker maker -->
+<section id="v-sticker" class="view">
+  <header>
+    <button id="btn-sticker-back" class="hbtn">‹</button>
+    <h1>Sticker maker</h1>
+  </header>
+  <div class="pad">
+    <button id="btn-pick" class="big">Choose picture</button>
+    <input id="file-sticker" type="file" accept="image/*" class="hidden">
+    <canvas id="sticker-canvas" width="512" height="512"></canvas>
+    <label>Zoom <input id="st-zoom" type="range" min="50" max="300" value="100"></label>
+    <label>X <input id="st-x" type="range" min="-100" max="100" value="0"></label>
+    <label>Y <input id="st-y" type="range" min="-100" max="100" value="0"></label>
+    <label>Shape
+      <select id="st-shape">
+        <option value="square">Square</option>
+        <option value="rounded">Rounded</option>
+        <option value="circle">Circle</option>
+      </select>
+    </label>
+    <label>Caption <input id="st-text" type="text" maxlength="30"></label>
+    <div class="row">
+      <button id="btn-st-save" class="big">Save to my stickers</button>
+      <button id="btn-st-send" class="big accent">Send to chat</button>
+    </div>
+    <p id="st-hint" class="hint"></p>
+  </div>
+</section>
+
+<!-- Settings -->
+<section id="v-settings" class="view">
+  <header>
+    <button id="btn-settings-back" class="hbtn">‹</button>
+    <h1>Bridge settings</h1>
+  </header>
+  <div class="pad">
+    <label>Bridge URL <input id="cfg-url" type="text" placeholder="ws://192.168.1.10:8787"></label>
+    <label>Token <input id="cfg-token" type="text"></label>
+    <p class="hint">Type <b>demo</b> as the URL to try the UI without a bridge.</p>
+    <button id="btn-cfg-save" class="big accent">Save &amp; connect</button>
+  </div>
+</section>
+
+<!-- Media viewer -->
+<div id="viewer" class="hidden">
+  <button id="viewer-close">✕</button>
+  <div id="viewer-body"></div>
+</div>
+
+<script src="js/notify.js"></script>
+<script src="js/net.js"></script>
+<script src="js/sticker.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

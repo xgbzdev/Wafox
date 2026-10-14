@@ -1,0 +1,21 @@
+{
+  "name": "WaFox",
+  "description": "WhatsApp client for Firefox OS (talks to a self-hosted bridge)",
+  "launch_path": "/index.html",
+  "type": "privileged",
+  "version": "1.0.0",
+  "default_locale": "en",
+  "developer": { "name": "WaFox" },
+  "icons": {
+    "60": "/icons/60.png",
+    "128": "/icons/128.png"
+  },
+  "permissions": {
+    "desktop-notification": {
+      "description": "Show notifications for new messages"
+    },
+    "systemXHR": {
+      "description": "Download media and upload attachments to the bridge"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+* { box-sizing: border-box; -moz-box-sizing: border-box; }
+html, body { margin: 0; height: 100%; font-family: sans-serif; font-size: 16px; background: #0b141a; color: #e9edef; overflow: hidden; }
+.hidden { display: none !important; }
+
+.view { position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: none; flex-direction: column; background: #0b141a; }
+.view.active { display: flex; display: -moz-flex; }
+
+header { display: flex; align-items: center; background: #202c33; height: 48px; padding: 0 4px; flex: none; }
+header h1 { flex: 1; font-size: 18px; margin: 0 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hbtn { background: none; border: 0; color: #e9edef; font-size: 18px; padding: 8px 10px; }
+.dot { width: 10px; height: 10px; border-radius: 5px; margin-right: 6px; }
+.dot.on { background: #25d366; } .dot.off { background: #c0392b; }
+
+.list { list-style: none; margin: 0; padding: 0; overflow-y: auto; flex: 1; }
+.list li { display: flex; padding: 10px 12px; border-bottom: 1px solid #1f2c34; }
+.avatar { width: 42px; height: 42px; border-radius: 21px; background: #667781; color: #fff; text-align: center; line-height: 42px; font-weight: bold; margin-right: 10px; flex: none; }
+.cmeta { flex: 1; min-width: 0; }
+.cname { font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cprev { color: #8696a0; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.badge { background: #25d366; color: #0b141a; border-radius: 10px; padding: 0 7px; font-size: 12px; align-self: center; }
+
+#messages { flex: 1; overflow-y: auto; padding: 8px; background: #0b141a; }
+.msg { max-width: 82%; margin: 4px 0; padding: 6px 8px; border-radius: 8px; background: #202c33; clear: both; word-wrap: break-word; }
+.msg.me { background: #005c4b; margin-left: auto; }
+.msg .who { font-size: 12px; color: #53bdeb; margin-bottom: 2px; }
+.msg .ts { font-size: 11px; color: #8696a0; text-align: right; margin-top: 2px; }
+.msg img.media, .msg video.media { max-width: 100%; max-height: 240px; display: block; border-radius: 6px; background: #000; }
+.msg.sticker { background: none; }
+.msg.sticker img { width: 128px; height: 128px; display: block; }
+
+.voice { display: flex; align-items: center; min-width: 180px; }
+.voice button { width: 36px; height: 36px; border-radius: 18px; border: 0; background: #25d366; color: #0b141a; font-size: 16px; flex: none; }
+.voice .bar { flex: 1; height: 4px; background: #54656f; margin: 0 8px; position: relative; border-radius: 2px; }
+.voice .bar i { position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: #25d366; border-radius: 2px; }
+.voice .dur { font-size: 12px; color: #8696a0; }
+
+.composer { display: flex; align-items: center; background: #202c33; padding: 4px; flex: none; }
+.composer input[type=text] { flex: 1; min-width: 0; border: 0; border-radius: 18px; padding: 9px 12px; background: #2a3942; color: #e9edef; font-size: 16px; }
+.cbtn { background: none; border: 0; color: #e9edef; font-size: 22px; padding: 6px 8px; }
+.cbtn.send { color: #25d366; }
+
+#sticker-tray { background: #111b21; height: 110px; overflow-x: auto; white-space: nowrap; padding: 6px; flex: none; }
+#sticker-tray img { width: 90px; height: 90px; margin-right: 6px; background: #1f2c34; border-radius: 6px; }
+#sticker-tray .empty { color: #8696a0; padding: 30px 10px; display: inline-block; }
+
+.pad { padding: 10px; overflow-y: auto; flex: 1; }
+.pad label { display: block; margin: 8px 0; font-size: 14px; color: #8696a0; }
+.pad input[type=text], .pad select { width: 100%; padding: 8px; background: #2a3942; color: #e9edef; border: 0; border-radius: 6px; font-size: 16px; }
+.pad input[type=range] { width: 100%; }
+.big { width: 100%; padding: 10px; margin: 6px 0; border: 0; border-radius: 6px; background: #2a3942; color: #e9edef; font-size: 16px; }
+.big.accent { background: #25d366; color: #0b141a; }
+.row { display: flex; } .row .big { margin-right: 4px; }
+.hint { color: #8696a0; font-size: 13px; }
+#sticker-canvas { width: 100%; max-width: 256px; display: block; margin: 8px auto; background:
+  repeating-conic-gradient(#2a3942 0% 25%, #1f2c34 0% 50%) 50% / 16px 16px; border-radius: 6px; }
+
+#viewer { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: #000; z-index: 10; }
+#viewer-body { position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: center; }
+#viewer-body img, #viewer-body video { max-width: 100%; max-height: 100%; }
+#viewer-close { position: absolute; top: 6px; right: 6px; z-index: 11; background: rgba(0,0,0,.6); color: #fff; border: 0; font-size: 20px; padding: 6px 12px; border-radius: 6px; }
